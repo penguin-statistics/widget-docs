@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@mdi/js": "^5.8.55",
+    "bulma": "^0.9.1",
+    "clipboard-polyfill": "^3.0.1",
     "core-js": "^3.6.5",
     "github-markdown-css": "^4.0.0",
     "marked": "^1.2.5",

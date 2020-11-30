@@ -1,25 +1,42 @@
 <template>
-  <div id="app">
+  <section id="app" class="section mx-5">
     <div class="container">
-      <img alt="Logo" src="./assets/logo.png" class="logo">
-      <h1 class="title">
-        {{ $t('app.vendor') }}
-        <small>{{ $t('app.name') }}</small>
-      </h1>
+<!--      <img alt="Logo" src="./assets/logo.png" class="logo">-->
+<!--      <h1 class="title">-->
+<!--        {{ $t('app.vendor') }}-->
+<!--        <small>{{ $t('app.name') }}</small>-->
+<!--      </h1>-->
 
       <LocaleSwitcher />
 
+      <section class="hero is-dark is-bold rounded">
+        <div class="hero-body">
+          <div class="container">
+            <img alt="Logo" src="./assets/logo.png" class="logo">
+
+            <h1 class="title">
+              {{ $t('app.name') }}
+            </h1>
+            <h2 class="subtitle">
+              {{ $t('app.vendor') }}
+            </h2>
+          </div>
+        </div>
+      </section>
+
       <div class="docs">
-        <markdown-i18n id="docs" />
+        <markdown-i18n id="docs.before" />
+        <QuickStart />
+        <markdown-i18n id="docs.after" />
       </div>
 
-      <div class="footer">
-        <div style="font-size: 2rem; font-weight: bold; margin-left: 16px; opacity: .2; user-select: none">
-          :D
+      <footer class="customized-footer">
+        <div style="font-size: 2rem; font-weight: bold; margin-left: 16px; opacity: .1; user-select: none; overflow: hidden; position: absolute; left: 1rem">
+          widget-docs
         </div>
         <div style="flex-grow: 1">&nbsp;</div>
 
-        <div style="margin-right: 4px; display: flex; flex-direction: column; padding: 8px 0">
+        <div style="margin-right: 8px; display: flex; flex-direction: column; padding: 8px 0">
           <div>
             {{ $t('app.vendor') }}
           </div>
@@ -29,17 +46,19 @@
         </div>
 
         <img alt="Logo" src="./assets/logo.png" class="logo-small">
-      </div>
+      </footer>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 import LocaleSwitcher from '@/components/settings/LocaleSwitcher'
+import QuickStart from '@/components/QuickStart'
 
 export default {
   name: 'App',
   components: {
+    QuickStart,
     LocaleSwitcher
   },
   computed: {
@@ -52,38 +71,14 @@ export default {
 
 <style lang="scss">
 html, body {
-  background: #f5f5f5;
+  background: #f5f5f5 !important;
 }
-.markdown-body pre {
-  background: #ddd !important;
-}
-.markdown-body ol ol, .markdown-body ol ul, .markdown-body ul ol, .markdown-body ul ul {
-  margin-bottom: 16px !important;
-}
+
 #app {
   font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-top: 60px;
-}
-
-@media (min-width: 1264px) {
-  .container {
-    max-width: 1185px;
-  }
-}
-
-@media (min-width: 960px) {
-  .container {
-    max-width: 900px;
-  }
-}
-
-.container {
-  width: 100%;
-  padding: 12px;
-  margin-right: auto;
-  margin-left: auto;
+  padding: 48px 0 96px 0
 }
 
 .logo {
@@ -94,6 +89,7 @@ html, body {
 .logo-small {
   width: 40px;
   height: 40px;
+  margin-right: 1rem;
 }
 
 h1.title {
@@ -103,7 +99,8 @@ h1.title {
 .docs {
   margin: 24px 0
 }
-.footer {
+
+.customized-footer {
   margin: 64px 0;
   padding: 8px;
   background: rgba(0, 0, 0, .1);
@@ -112,6 +109,7 @@ h1.title {
   align-items: center;
   justify-content: flex-end;
   text-align: right;
-  border-radius: 8px;
+  border-radius: 4px;
+  position: relative;
 }
 </style>

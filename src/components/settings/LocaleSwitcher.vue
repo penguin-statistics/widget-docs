@@ -1,5 +1,5 @@
 <template>
-  <div class="locale-switcher">
+  <div class="locale-switcher mb-4">
     <span class="settings-header">
       {{ $t('settings.language') }}
     </span>
@@ -11,6 +11,9 @@
       @click="activeLocale = locale.value"
     >
       {{ locale.text }}
+    </span>
+    <span style="font-size: 2rem; font-weight: bold; margin-right: 16px; opacity: .1; user-select: none; overflow: hidden; position: absolute; right: 4px">
+      i18n
     </span>
   </div>
 </template>
@@ -57,10 +60,10 @@ export default {
   flex-wrap: wrap;
   align-items: center;
 
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 12px 16px;
-  background: rgba(0, 0, 0, .1);
-  box-shadow: 0 0 8px rgba(0, 0, 0, .18);
+  background: linear-gradient(141deg, #dfd8d9 0%, whitesmoke 71%, rgba(0, 0, 0, .1) 100%);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 1);
 }
 
 .settings-option {

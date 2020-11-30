@@ -1,5 +1,6 @@
 module.exports = {
   lintOnSave: false,
+  assetsDir: '_docs',
 
   pluginOptions: {
     i18n: {

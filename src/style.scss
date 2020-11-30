@@ -1,0 +1,19 @@
+@import "~bulma/bulma";
+
+.markdown-body {
+  pre {
+    background: #ddd !important;
+  }
+
+  ol, ul {
+    list-style: initial;
+  }
+
+  ol ol, ol ul, ul ol, ul ul {
+    margin-bottom: 16px !important;
+  }
+}
+
+.rounded {
+  border-radius: 4px;
+}

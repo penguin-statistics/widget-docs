@@ -3,6 +3,7 @@ import App from './App.vue'
 import i18n from './i18n'
 import marked from 'marked'
 import 'github-markdown-css/github-markdown.css'
+import './style.scss'
 
 Vue.config.productionTip = false
 
@@ -18,8 +19,22 @@ Vue.component('markdown-i18n', {
         class: 'markdown-body'
       }
     })
-  }
+  },
+  mounted: processLinks,
+  updated: processLinks
 })
+
+function processLinks () {
+  [...this.$el.querySelectorAll('a')].forEach(a => {
+    // avoid interferring with form input tab focus
+    a.setAttribute('tabindex', '-1')
+    const href = a.getAttribute('href')
+    if (href && href.charAt(0) !== '#') {
+      // make external links open in new tab
+      a.setAttribute('target', '_blank')
+    }
+  })
+}
 
 new Vue({
   i18n,
