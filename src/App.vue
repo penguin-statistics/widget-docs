@@ -31,9 +31,9 @@
       </div>
 
       <footer class="customized-footer">
-        <div style="font-size: 2rem; font-weight: bold; margin-left: 16px; opacity: .1; user-select: none; overflow: hidden; position: absolute; left: 1rem">
-          widget-docs
-        </div>
+        <a href="https://github.com/penguin-statistics/widget-docs" target="_blank" class="float-link">
+          /widget-docs
+        </a>
         <div style="flex-grow: 1">&nbsp;</div>
 
         <div style="margin-right: 8px; display: flex; flex-direction: column; padding: 8px 0">
@@ -106,7 +106,7 @@ h1.title {
 .customized-footer {
   margin: 64px 0;
   padding: 8px;
-  background: rgba(0, 0, 0, .1);
+  background: linear-gradient(219deg, #dfd8d9 0%, whitesmoke 71%, rgba(0, 0, 0, .1) 100%);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -114,5 +114,19 @@ h1.title {
   text-align: right;
   border-radius: 4px;
   position: relative;
+}
+.float-link {
+  color: black;
+  position: absolute;
+  left: 1rem;
+
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 16px;
+  opacity: .1;
+  overflow: hidden;
+}
+.float-link:hover {
+  text-decoration: underline;
 }
 </style>

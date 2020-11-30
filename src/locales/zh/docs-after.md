@@ -1,10 +1,9 @@
 # 详细文档
 
-外部开发者可从以下 URL 获取小组件 HTML：
+若要使用小组件，外部开发者可请求「将*页面路径*与以下 URL 模板拼接所获得的 URL」以得到 HTML 格式的小组件内容页：
 ```
 GET https://widget.penguin-stats.io/{path}
 ```
-若要引用统计数据，外部开发者可将*页面路径*与上部所述 URL 模板拼凑以得到最终的小组件页面 URL。
 
 ## 页面路径
 - 引用**特定关卡**的统计数据：`/result/:server/stage/:stageId`
