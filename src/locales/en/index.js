@@ -1,6 +1,7 @@
 export default {
   app: {
     name: 'Widget Documentation',
+    title: 'Widget',
     vendor: 'Penguin Statistics'
   },
   settings: {

@@ -1,6 +1,7 @@
 export default {
   app: {
     name: '小组件使用文档',
+    title: '小组件',
     vendor: '企鹅物流数据统计'
   },
   settings: {

@@ -61,6 +61,9 @@ export default {
     QuickStart,
     LocaleSwitcher
   },
+  created () {
+    document.title = this.$t('app.title') + ' | ' + this.$t('app.vendor')
+  },
   computed: {
     year () {
       return new Date().getFullYear()
