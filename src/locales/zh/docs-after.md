@@ -8,7 +8,7 @@ GET https://widget.penguin-stats.io/{path}
 ## 页面路径
 - 引用**特定关卡**的统计数据：`/result/:server/stage/:stageId`
     - 例 1：引用服务器 国服 `CN` 的关卡 第一章 1-7 `main_01-07` 的统计数据：`/result/CN/stage/main_01-07`
-    - 例 2：引用服务器 日服 `JP` 的关卡 沃伦姆德的薄暮 TW-8 `act11d0_08` 的统计数据：`/result/jp/stage/act11d0_08`
+    - 例 2：引用服务器 日服 `JP` 的关卡 沃伦姆德的薄暮 TW-8 `act11d0_08` 的统计数据：`/result/JP/stage/act11d0_08`
 - 引用**特定物品**的统计数据：`/result/:server/item/:itemId`
     - 例 1：引用服务器 国服 `CN` 的物品 固源岩 `30012` 的统计数据：`/result/CN/item/30012`
     - 例 2：引用服务器 日服 `JP` 的关卡 家具 `furni` 的统计数据：`/result/JP/item/furni`
