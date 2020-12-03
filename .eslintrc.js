@@ -3,6 +3,10 @@ module.exports = {
   env: {
     node: true
   },
+  globals: {
+    GIT_COMMIT: true,
+    BUILD_TIME: true
+  },
   extends: [
     'plugin:vue/essential',
     '@vue/standard'

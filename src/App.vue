@@ -30,22 +30,28 @@
         <markdown-i18n id="docs.after" />
       </div>
 
-      <footer class="customized-footer">
-        <a href="https://github.com/penguin-statistics/widget-docs" target="_blank" class="float-link">
-          /widget-docs
-        </a>
-        <div style="flex-grow: 1">&nbsp;</div>
+      <footer>
+        <div class="customized-footer">
+          <a href="https://github.com/penguin-statistics/widget-docs" target="_blank" class="float-link">
+            /widget-docs
+          </a>
+          <div style="flex-grow: 1">&nbsp;</div>
 
-        <div style="margin-right: 8px; display: flex; flex-direction: column; padding: 8px 0">
-          <div>
-            {{ $t('app.vendor') }}
+          <div style="margin-right: 8px; display: flex; flex-direction: column; padding: 8px 0">
+            <div>
+              {{ $t('app.vendor') }}
+            </div>
+            <small style="margin-top: 4px; font-weight: bold">
+              CC BY-NC 4.0 // {{ year }}
+            </small>
           </div>
-          <small style="margin-top: 4px; font-weight: bold">
-            CC BY-NC 4.0 // {{ year }}
-          </small>
+
+          <img alt="Logo" src="./assets/logo.png" class="logo-small">
         </div>
 
-        <img alt="Logo" src="./assets/logo.png" class="logo-small">
+        <div class="build is-size-7">
+          build {{version.build}} <span style="width: 1rem; display: inline-block">&nbsp;</span> last update {{version.time}}
+        </div>
       </footer>
     </div>
   </section>
@@ -67,6 +73,12 @@ export default {
   computed: {
     year () {
       return new Date().getFullYear()
+    },
+    version () {
+      return {
+        build: GIT_COMMIT,
+        time: new Date(parseInt(BUILD_TIME) * 1000).toLocaleString()
+      }
     }
   }
 }
@@ -81,7 +93,7 @@ html, body {
   font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 48px 0 96px 0
+  padding: 48px 0 64px 0
 }
 
 .logo {
@@ -104,7 +116,7 @@ h1.title {
 }
 
 .customized-footer {
-  margin: 64px 0;
+  margin: 64px 0 16px;
   padding: 8px;
   background: linear-gradient(219deg, #dfd8d9 0%, whitesmoke 71%, rgba(0, 0, 0, .1) 100%);
   display: flex;
@@ -128,5 +140,9 @@ h1.title {
 }
 .float-link:hover {
   text-decoration: underline;
+}
+.build {
+  text-align: center;
+  opacity: .6;
 }
 </style>
