@@ -31,6 +31,7 @@ function processLinks () {
     if (href && href.charAt(0) !== '#') {
       // make external links open in new tab
       a.setAttribute('target', '_blank')
+      a.setAttribute('rel', 'noreferrer noopener')
     }
   })
 }
